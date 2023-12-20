@@ -5,7 +5,8 @@ $(document).ready(loadGame);
 function loadGame()
 {
     //Attach event handlers
-    $(document).on("mousedown", ".buzzer", buzzerClicked);
+    $(document).on("mousedown", ".buzzer", function (e) { console.log("mousedown"); buzzerClicked(e.target); });
+    $(document).on("touchstart", ".buzzer", function (e) { console.log("touchstart"); buzzerClicked(e.targetTouches[0].target); });
     $(document).on("click", "#reset", resetBuzzers);
     $(document).on("change", "#buzzercount", loadBuzzers);
 
@@ -55,10 +56,10 @@ function resetBuzzers()
     $("#reset").prop("disabled", true);
 }
 
-function buzzerClicked(event)
+function buzzerClicked(target)
 {
     //Get buzzer that buzzed
-    var buzzer = $(event.target).val();
+    var buzzer = $(target).val();
     console.log("Buzzer " + buzzer + " buzzed");
 
     //Play buzz sound
