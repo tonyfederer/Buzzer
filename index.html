@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buzzer</title>            
+    </head>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/buzzer.js"></script>
+    <link rel="stylesheet" href="css/buzzer.css"/>
+    </style>
+</html>
+
+<body>
+
+    <audio id="buzz" src="audio/buzz.mp3" preload="auto"></audio>
+
+    <div id="header">
+        <label for="buzzercount">Buzzers:</label>
+        <select id="buzzercount">
+            <option>2</option>
+            <option>3</option>
+            <option selected>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+        <input id="sound" type="checkbox"/>
+        <label for="sound">Sound</label>
+        <button id="reset">Reset</button>
+    </div>
+
+    <div id="main">
+
+    </div>
+
+</body>
