@@ -81,6 +81,8 @@ function buzzerClicked(target)
     //Play buzz sound
     if ($("#sound").prop("checked"))
     {
+        buzz.pause();
+        buzz.currentTime = 0;
         buzz.play();
     }
 
