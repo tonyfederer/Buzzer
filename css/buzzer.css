@@ -9,7 +9,7 @@ html, body
 body
 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     display: flex;
     flex-flow: column;
 }
@@ -18,38 +18,36 @@ body
 {
     background: lightgray;
     text-align: center;
-    padding: 5px;
 }
 
 input, select, button, label
 {
     vertical-align:middle;
-    font-size: 16px;
+    font-size: 20px;
 }
 
-select, input
+input, select, button
 {
-    padding: 0 5x;
+    padding: 0 5px;
+    margin: 5px;
 }
 
-#header button
+input[type="checkbox"]
 {
-    margin: 0 20px;
-    padding: 5px 20px;
+    width: 20px;
+    height: 20px;
 }
 
 #main
 {
-    border: solid 1px black;
-
     /* Use all remaining space */
     flex-grow: 1;
 
     /* Show buzzers as 2x grid */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 10px;
+    gap: 2%;
+    padding: 2%; */
 }
 
 #footer
@@ -60,9 +58,10 @@ select, input
 .buzzer
 {
     color: black;
-    font-size: 10em;
-    border-radius: 20px;
+    font-size: 50px;
+    border-radius: 10px;
     border: solid 2px black;
+    margin: 0;
 }
 
 .buzzer1
