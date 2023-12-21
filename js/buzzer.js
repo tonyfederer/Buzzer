@@ -1,4 +1,5 @@
 var buzz;
+var buzzed;
 
 $(document).ready(loadGame);
 
@@ -42,6 +43,9 @@ function loadBuzzers()
 
     //Disable reset button
     $("#reset").prop("disabled", true);
+
+    //Reset buzzed indicator
+    buzzed = false;
 }
 
 function resetBuzzers()
@@ -54,10 +58,22 @@ function resetBuzzers()
     
     //Disable reset button
     $("#reset").prop("disabled", true);
+
+    //Reset buzzed indicator
+    buzzed = false;
 }
 
 function buzzerClicked(target)
 {
+    //If buzzer has already been buzzed, ignore another click
+    if (buzzed)
+    {
+        return;
+    }
+
+    //Set buzzed indicator
+    buzzed = true;
+
     //Get buzzer that buzzed
     var buzzer = $(target).val();
     console.log("Buzzer " + buzzer + " buzzed");
